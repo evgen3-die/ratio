@@ -1,28 +1,3 @@
-include ../logo/logo
-include ../search-widget/search-widget
-include ../main-menu/main-menu
-include ../github-button/github-button
-include ../header-presentation/header-presentation
-include ../mobile-menu-trigger/mobile-menu-trigger
-
 mixin header(data)
 	header.header
-		.header__top
-			.header__inner
-				.header__logo
-					+logo()
-				
-				.header__menu
-					+main-menu(mainMenu.default)
-
-				.header__github
-					+github-button()
-						
-				.header__mobile-menu-trigger
-					+mobile-menu-trigger()
-
-				.clear
-
-		.header__bottom
-			.header__inner
-				+header-presentation(data)
+		.header__text День в фото

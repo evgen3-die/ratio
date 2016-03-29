@@ -1,18 +1,32 @@
 include ../modules/head/head
-include ../modules/_page-list/_page-list
+include ../modules/browsehappy/browsehappy
+include ../modules/header/header
+include ../modules/top-banner/top-banner
+include ../modules/gallery-list/gallery-list
+include ../modules/pagination/pagination
+include ../modules/demo/demo
+
 
 doctype html
 html(class="no-js" lang="ru")
 
 	head
-		+head(head.index)
-
-	style
-		:stylus
-			body
-				background #fff
-
-			@import "../modules/_page-list/_page-list.styl"
+		+head(head.home)
 
 	body.page
-		+page-list(pageList.data)
+		+browsehappy(browsehappy)
+		
+		.page__content
+			.page__wrapper
+				.page__header
+					+header()
+				.page__top-banner
+					+top-banner()
+				.page__gallery-list
+					+gallery-list(galleryList.data)
+				.page__pagination
+					+pagination({"pages": 4, "active": 1, "beforeText": "Страницы:", nextText: "Следующая"})
+		
+		//- Scripts
+		script(src='js/plugins.min.js')
+		script(src='js/main.min.js')

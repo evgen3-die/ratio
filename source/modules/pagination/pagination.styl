@@ -1,27 +1,49 @@
 .pagination
 	m-cf()
-	text-align center
+	font-family notosans
+	font-size: 0
 	+ul-reset()
 		display inline-block
 		font-size 0
+
+	&__before-text
+		vertical-align: baseline
+		font-size: 13px
+		margin-right: 25px
+		color: #848484
+		+below($media-screen-xxs)
+			display: none
 
 	&__item
 		list-style none
 		padding 0
 		display inline-block
-		vertical-align middle
-		font-size 16px
+		vertical-align baseline
+		font-size 13px
 		font-weight 300
+		margin-right: 10px
+		+below($media-screen-xxs)
+			margin-right: 0
+		&_next
+			margin-right: 0
+			margin-left: 15px
+			+below($media-screen-xxs)
+				margin-left: 25px
+			a
+				text-decoration: none
+				color: #000
+				&:hover
+					color #848484
 
 	&__link
 		&
 		&:visited
 			color #505050
-			padding 8px
-			size 16px
+			size 34px
 			display block
 			text-decoration none
-			line-height 1
+			line-height 34px
+			text-align: center
 
 		&:hover
 			color #9d9d9d
@@ -34,7 +56,7 @@
 		text-align center
 		transition 125ms all ease-in-out
 		&:hover
-			background-color #d2d2d2
+			background-color #848484
 			svg
 				fill #fff
 		svg
@@ -44,4 +66,6 @@
 	&__item_active &__link
 		&
 		&:visited
-			color #f05050
+			font-weight: 700
+			border-radius 50%
+			background-color #e6e6e6

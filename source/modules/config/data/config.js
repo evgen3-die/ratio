@@ -1,4 +1,4 @@
 "config": {
-	"projectName": "Gulp-front",
+	"projectName": "",
 	"useSocialMetaTags": true
 }

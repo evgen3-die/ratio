@@ -1,0 +1,9 @@
+include ../date-block/date-block
+mixin top-banner()
+	.top-banner
+		.top-banner__image
+			.top-banner__date-block
+				+date-block({"date": 21, "month": "сентября"})
+			img(src="img/top-banner/banner.jpg", alt="Мельницы маленькой деревушки Brandmill близи курортного австрийского города Mayerhoffen")
+		.top-banner__title Мельницы маленькой деревушки Brandmill близи курортного австрийского города Mayerhoffen.
+		.top-banner__author Фото: Reuters

@@ -14,22 +14,32 @@ html, body
 
 	&__wrapper
 		min-height 100%
-		margin-bottom -50px
-
+		max-width $content-width
+		margin 0 auto
+		padding 29px 34px
+		+below($media-screen-xs)
+			padding-left: 20px
+			padding-right: 20px
+		+below($media-screen-xxs)
+			padding: 25px 5px
 
 	* html &__wrapper
 		height 100%
 
-	&__buffer
-		height 50px
-
 	&__header
-		margin-bottom 50px
+		//
 
-	&__main
-		max-width $content-width
-		margin 0 auto
-		padding-bottom 60px
+	&__top-banner
+		margin-top 22px
+	&__gallery-list
+		margin-top: 15px
+		+below($media-screen-xs)
+			margin-top: 10px
+	&__pagination
+		margin-top: 30px
+
+	&__inner
+		//
 
 	&__bread-crumbs
 		//

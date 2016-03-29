@@ -1,0 +1,23 @@
+include ../date-block/date-block
+include ../horizontal-commercial/horizontal-commercial	
+mixin gallery-list(data)
+	.gallery-list
+		each ent, num in data
+			if ent.type == "image"
+				a(href="#").gallery-list__item
+					img(src= ent.src, alt= ent.alt)
+			if ent.type == "commercial"
+				a(href="#").gallery-list__item.gallery-list__item_commercial
+					img(src= ent.src, alt= ent.alt)
+			if ent.type == "date"
+				.gallery-list__item.gallery-list__item_date
+					+date-block({"date": ent.date, "month": ent.month})
+			if ent.type == "horizontal-commercial"
+				a(href="#").gallery-list__item.gallery-list__item_horizontal-commercial
+					+horizontal-commercial({
+						"src": ent.src,
+						"alt": ent.alt,
+						"name": "Рекламный тизер",
+						"title": "Театральная паутина",
+						"text": "Открытие новых сервисных центров немецкого автопрома"
+					})

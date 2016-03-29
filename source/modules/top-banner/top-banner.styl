@@ -1,0 +1,40 @@
+.top-banner
+	&__image
+		position relative
+		&::after
+			content: ''
+			position: absolute
+			bottom: 0
+			left: 50%
+			border: 8px solid transparent
+			border-bottom: 8px solid white
+			margin-left: -8px
+			+below($media-screen-xs)
+				display: none
+
+		img
+			max-width 100%
+	&__date-block
+		position: absolute
+		top 20px
+		left 20px
+		width 160px
+		padding 13px 0
+		padding-bottom 24px
+		background-color rgba(white, .5)
+		+below($media-screen-xs)
+			top: 10px
+			left: 10px
+			width: 80px
+			padding-top: 4px
+			padding-bottom: 8px
+	&__title
+		font-weight: 700
+		font-size: 13px
+		margin-top: 13px
+		+below($media-screen-xs)
+			display: none
+	&__author
+		color: #acacac
+		+below($media-screen-xs)
+			display: none

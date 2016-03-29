@@ -1,0 +1,27 @@
+.date-block
+	font-family notoserif
+	text-align: center
+	font-size: 18px
+	position: relative
+	+below($media-screen-xs)
+		font-size: 14px
+	&::after
+		position: absolute
+		top: 50%
+		right: 50%
+		margin-right: -39.5%
+		margin-top: -12px
+		content: ""
+		border: 3px solid transparent
+		border-left: 3px solid #111
+		+below($media-screen-xs)
+			margin-top: -10px
+		.top-banner	&
+			+below($media-screen-xs)
+				display: none
+	&__date
+		font-size: 2em
+		+below($media-screen-xs)
+			font-size: 1.5em
+	&__month
+		margin-top: -5px

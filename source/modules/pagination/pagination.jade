@@ -2,6 +2,8 @@ include ../icon/icon
 
 mixin pagination(data)
 	nav.pagination
+		if data.beforeText
+			span.pagination__before-text= data.beforeText
 		ul
 			if data.arrows
 				li.pagination__item.pagination__arrow.pagination__arrow_prev
@@ -12,7 +14,7 @@ mixin pagination(data)
 				- var classes = ['pagination__item']
 				if i == 0
 					- classes.push(classes[0] + '_first')
-				if i == data.pages
+				if i == data.pages - 1
 					- classes.push(classes[0] + '_last')
 				if i+1 == data.active
 					- classes.push(classes[0] + '_active')
@@ -20,13 +22,18 @@ mixin pagination(data)
 				li(class=classes)
 					a(href="#").pagination__link= i+1
 
-			li.pagination__item.pagination__item_spacer
-				.pagination__link ...
+			if data.total
+				li.pagination__item.pagination__item_spacer
+					.pagination__link ...
 
-			li.pagination__item
-				a(href="#", aria-label="Last").pagination__link= data.total
+				li.pagination__item
+					a(href="#", aria-label="Last").pagination__link= data.total
 			
 			if data.arrows
 				li.pagination__item.pagination__arrow.pagination__arrow_next
 					a(href="#", aria-label="Next").pagination__link
 						+icon('chevron-right')
+
+			if data.nextText
+				li.pagination__item.pagination__item_next
+					a(href="#", aria-label="Next")= data.nextText
